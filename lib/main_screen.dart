@@ -1,61 +1,55 @@
 import 'package:flutter/material.dart';
+import 'create_routine_screen.dart';
+import 'recommended_screen.dart';
+import 'progress_screen.dart';
+import 'settings_screen.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
         title: const Text('Pantalla Principal'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/calendario_app.jpeg', width: 150, height: 150),
-            const SizedBox(height: 20),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.teal,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              ),
               onPressed: () {
-                Navigator.pushNamed(context, '/createRoutine');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CreateRoutineScreen()),
+                );
               },
               child: const Text('Crear Rutina'),
             ),
-            const SizedBox(height: 10),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.teal,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              ),
               onPressed: () {
-                Navigator.pushNamed(context, '/recommended');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const RecommendedScreen()),
+                );
               },
               child: const Text('Rutinas Recomendadas'),
             ),
-            const SizedBox(height: 10),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.teal,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              ),
               onPressed: () {
-                Navigator.pushNamed(context, '/progress');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProgressScreen()),
+                );
               },
               child: const Text('Ver Progreso'),
             ),
-            const SizedBox(height: 10),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.teal,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              ),
               onPressed: () {
-                Navigator.pushNamed(context, '/settings');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SettingsScreen()),
+                );
               },
               child: const Text('Configuración'),
             ),

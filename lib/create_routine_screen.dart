@@ -7,12 +7,17 @@ class CreateRoutineScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Crear Rutina"),
+        backgroundColor: Colors.teal,
+        title: const Text('Crear Rutina'),
       ),
-      body: const Center(
-        child: Text(
-          "Pantalla para Crear Rutinas",
-          style: TextStyle(fontSize: 24),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/images/rutinas_recomendadas.jpeg', width: 150, height: 150),
+            const SizedBox(height: 20),
+            const Text('Aquí puedes crear tu rutina', style: TextStyle(fontSize: 18)),
+          ],
         ),
       ),
     );

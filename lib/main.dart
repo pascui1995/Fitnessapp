@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'welcome_screen.dart';
 import 'main_screen.dart';
-import 'create_routine_screen.dart';
-import 'recommended_screen.dart';
-import 'progress_screen.dart';
-import 'settings_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,16 +14,43 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fitness App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.deepPurple,
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.deepPurple,
+        ).copyWith(
+          secondary: Colors.amber,
+        ),
+        textTheme: const TextTheme(
+          headline1: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+            color: Colors.deepPurple,
+          ),
+          bodyText1: TextStyle(
+            fontSize: 16,
+            color: Colors.black87,
+          ),
+          button: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.amber,
+            onPrimary: Colors.black,
+            textStyle: const TextStyle(fontSize: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+        ),
       ),
       initialRoute: '/',
       routes: {
         '/': (context) => const WelcomeScreen(),
         '/main': (context) => const MainScreen(),
-        '/createRoutine': (context) => const CreateRoutineScreen(),
-        '/recommended': (context) => const RecommendedScreen(),
-        '/progress': (context) => const ProgressScreen(),
-        '/settings': (context) => const SettingsScreen(),
       },
     );
   }

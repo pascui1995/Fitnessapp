@@ -7,12 +7,17 @@ class ProgressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Progreso"),
+        backgroundColor: Colors.teal,
+        title: const Text('Progreso'),
       ),
-      body: const Center(
-        child: Text(
-          "Pantalla de Progreso",
-          style: TextStyle(fontSize: 24),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/images/calendario_app.jpeg', width: 150, height: 150),
+            const SizedBox(height: 20),
+            const Text('Monitorea tu progreso aquí', style: TextStyle(fontSize: 18)),
+          ],
         ),
       ),
     );

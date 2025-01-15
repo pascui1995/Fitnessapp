@@ -7,12 +7,17 @@ class RecommendedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Rutinas Recomendadas"),
+        backgroundColor: Colors.teal,
+        title: const Text('Rutinas Recomendadas'),
       ),
-      body: const Center(
-        child: Text(
-          "Pantalla de Rutinas Recomendadas",
-          style: TextStyle(fontSize: 24),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/images/grafica_app.avif', width: 150, height: 150),
+            const SizedBox(height: 20),
+            const Text('Rutinas que te recomendamos', style: TextStyle(fontSize: 18)),
+          ],
         ),
       ),
     );

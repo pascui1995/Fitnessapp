@@ -1,57 +1,44 @@
 import 'package:flutter/material.dart';
-import 'create_routine_screen.dart';
-import 'recommended_screen.dart';
-import 'progress_screen.dart';
-import 'settings_screen.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pantalla Principal'),
+        title: const Text("Pantalla Principal"),
       ),
-      body: Column(
-        children: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const CreateRoutineScreen()),
-              );
-            },
-            child: const Text('Crear Rutina'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const RecommendedScreen()),
-              );
-            },
-            child: const Text('Ver Rutinas Recomendadas'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProgressScreen()),
-              );
-            },
-            child: const Text('Ver Seguimiento del Progreso'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SettingsScreen()),
-              );
-            },
-            child: const Text('Configuración'),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/createRoutine');
+              },
+              child: const Text("Crear Rutina"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/recommended');
+              },
+              child: const Text("Rutinas Recomendadas"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/progress');
+              },
+              child: const Text("Ver Progreso"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/settings');
+              },
+              child: const Text("Configuración"),
+            ),
+          ],
+        ),
       ),
     );
   }
